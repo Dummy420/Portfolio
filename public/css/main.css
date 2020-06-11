@@ -1636,7 +1636,7 @@ header .header-logo a {
 	background: #151515;
 	width: 100%;
 	height: 100%;
-	background-image: url(../images/earth.jpg);
+	background-image: url(../images/earth.webp);
 	background-attachment: fixed;
   	background-position: center;
   	background-repeat: no-repeat;
@@ -1953,7 +1953,7 @@ header .header-logo a {
 	height: 100%;
 	background: #EBEBEB;
 	width: 100%;
-	background-image: url(../images/star.jpg);
+	background-image: url(../images/star.webp);
 	background-repeat: no-repeat;
 	background-position: center;
 	-webkit-background-size: cover;
@@ -2172,7 +2172,7 @@ header .header-logo a {
  * ------------------------------------------------------------------- */
 #skills {
 	background-color: #1f0e01;
-	background-image: url(../images/compiter.jpg);
+	background-image: url(../images/compiter.webp);
 	background-repeat: no-repeat;
 	background-position: center;
 	-webkit-background-size: cover;
@@ -2765,7 +2765,7 @@ header .header-logo a {
  * ------------------------------------------------------------------- */
 #contact {
 	background-color: #111111;
-	background-image: url(../images/code.jpg);
+	background-image: url(../images/code.webp);
 	background-repeat: no-repeat;
 	background-position: center;
 	-webkit-background-size: cover;
