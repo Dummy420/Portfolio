@@ -4,5 +4,8 @@
         "FrameWork\\": ["Models/", "Controllers/","Vues/"],
         "Sources\\": ["Sources/"] 
       }
+  },
+  "require": {
+    "twig/twig": "^2.0"
   }
 }
