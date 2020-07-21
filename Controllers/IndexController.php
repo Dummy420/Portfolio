@@ -1,15 +1,14 @@
 <?php
-namespace FrameWork\Controllers;
+namespace FrameWork;
 
 class IndexController
 {
     public static function Render()
     {
-        $loader = new \Twig\Loader\ArrayLoader([
-            'index' => 'Hello {{ name }}!',
+        $loader = new \Twig\Loader\FilesystemLoader('Vues');
+        $twig = new \Twig\Environment($loader, [
         ]);
-        $twig = new \Twig\Environment($loader);
-        
-        echo $twig->render('index', ['name' => 'Fabien']);
+
+        $template = $twig->load('index.html.twig');
     }
 }
