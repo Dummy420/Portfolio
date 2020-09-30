@@ -1,13 +1,9 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Hello IndexController!{% endblock %}
-
-{% block head %}
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="fr"> <!--<![endif]-->
 <head>
+    
 
    <!--- basic page needs
    ================================================== -->
@@ -22,26 +18,32 @@
 
  	<!-- CSS
    ================================================== -->
-   <link rel="stylesheet" href="{{ asset('css/base.css') }}">
-   <link rel="stylesheet" href="{{ asset('css/vendor.css') }}">  
-   <link rel="stylesheet" href="{{ asset('css/main.css') }}">  
+   <link rel="stylesheet" href="public/css/base.css">
+   <link rel="stylesheet" href="public/css/vendor.css">  
+   <link rel="stylesheet" href="public/css/main.css">  
 
    <!-- script
    ================================================== -->
-	<script src="{{ asset('js/modernizr.js') }}"></script>
-	<script src="{{ asset('js/pace.min.js') }}"></script>
+	<script src="public/js/modernizr.js"></script>
+	<script src="public/js/pace.min.js"></script>
 
    <!-- favicons
 	================================================== -->
 	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-	<link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="icon" href="public/favicon.png" type="image/x-icon">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152056193-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-152056193-1');
+    </script>
 
 </head>
 
-
-{% endblock %}
-
-{% block body %}
 <body id="top">
 
 	<!-- header 
@@ -143,7 +145,7 @@
 	   			<p class="lead animate-this">Je suis Étudiant en BTS SIO option SLAM, dans l'informatique de Gestion, Plus précisément le Développement de Solutions informatique</p>					
 				</div>
    			<p>
-   				<a href="{{ asset ('CV_Pavel.pdf')}}" class="button full-width animate-this">Voir mon CV</a>
+   				<a href="public/CV_Pavel.pdf" class="button full-width animate-this">Voir mon CV</a>
    			</p>  			
 
    		</div> <!-- end about-profile  -->	
@@ -212,7 +214,7 @@
    			<h3 class="animate-this">Crrière et Éducation</h3>
 	   		<h1 class="animate-this">Mes experiences profesionelles et diplômes.</h1>  			
 	   		
-	   		{#<p class="lead">Lorem ipsum Dolor adipisicing nostrud et aute Excepteur amet commodo ea dolore irure esse Duis nulla sint fugiat cillum ullamco proident aliquip quis qui voluptate dolore veniam Ut laborum non est in officia.</p>	   			#}
+	   		<!--<p class="lead">Lorem ipsum Dolor adipisicing nostrud et aute Excepteur amet commodo ea dolore irure esse Duis nulla sint fugiat cillum ullamco proident aliquip quis qui voluptate dolore veniam Ut laborum non est in officia.</p>-->
    		</div>   		
    	</div> <!-- end section-intro -->
 
@@ -294,7 +296,7 @@
    			<h3 class="animate-this">Portfolio</h3>
 	   		<h1 class="animate-this">Tous mes projets, récents ou pas</h1>  			
 	   		
-	   		{#<p class="lead animate-this">Lorem ipsum Dolor adipisicing nostrud et aute Excepteur amet commodo ea dolore irure esse Duis nulla sint fugiat cillum ullamco proident aliquip quis qui voluptate dolore veniam Ut laborum non est in officia.</p>	   			#}
+	   		<!--<p class="lead animate-this">Lorem ipsum Dolor adipisicing nostrud et aute Excepteur amet commodo ea dolore irure esse Duis nulla sint fugiat cillum ullamco proident aliquip quis qui voluptate dolore veniam Ut laborum non est in officia.</p>-->
    		</div>   		
    	</div> <!-- end row section-intro -->
 
@@ -441,11 +443,10 @@
 
    <!-- Java Script
    ================================================== --> 
-   <script src="{{ asset('js/jquery-2.1.3.min.js') }}"></script>
-   <script src="{{ asset('js/plugins.js') }}"></script>
-   <script src="{{ asset('js/main.js') }}"></script>
+   <script src="public/js/jquery-2.1.3.min.js"></script>
+   <script src="public/js/plugins.js"></script>
+   <script src="public/js/main.js"></script>
 
 </body>
 
 </html>
-{% endblock %}
