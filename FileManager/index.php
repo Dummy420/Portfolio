@@ -68,9 +68,9 @@ $http_host = $_SERVER['HTTP_HOST'];
 // user specific directories
 // array('Username' => 'Directory path', 'Username2' => 'Directory path', ...)
 $directories_users = array(
-    'admin' => 'root',
-    'clement' => 'root/Clement',
-    'guest' => 'root/guest'
+    'admin' => '',
+    'clement' => '/Clement',
+    'guest' => '/guest'
 );
 
 // input encoding for iconv
