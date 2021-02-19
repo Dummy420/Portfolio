@@ -103,8 +103,8 @@
 			  				<h3 class="animate-intro">Hello, World.</h3>
 				  			<h1 class="animate-intro">
 							Je suis Clément Pavel, <br>
-							Étudiant en BTS SIO<br>
-							Option SLAM 
+							Étudiant en Licence Pro MIAW<br>
+							spécialisation DAWI
 				  			</h1>	
 
 							<ul class="home-section-links">
@@ -142,7 +142,7 @@
 					<h3 class="animate-this">About</h3>
 	   			<h1 class="animate-this">A propos de Moi.</h1>
 
-	   			<p class="lead animate-this">Je suis Étudiant en BTS SIO option SLAM, dans l'informatique de Gestion, Plus précisément le Développement de Solutions informatique</p>					
+	   			<p class="lead animate-this">Je suis Étudiant en LP MIAW spécialisation DAWI, dans le développement de sites Web, Internet & Intranet</p>					
 				</div>
    			<p>
    				<a href="public/CV_Pavel_0920.pdf" class="button full-width animate-this">Voir mon CV</a>
@@ -226,6 +226,20 @@
 
 	   		<div class="timeline-wrap">
 
+			   <div class="timeline-block animate-this">
+	   				<div class="timeline-ico">
+	   					<i class="fa fa-briefcase"></i>
+	   				</div>
+	   				<div class="timeline-header">
+	   					<p class="timeframe">Octobre 2020 - Séptembre 2021</p>
+	   					<h3>Kercambre</h3>
+	   					<h4>Alternance</h4>	   					
+	   				</div>
+	   				<div class="timeline-content">	   					
+	   					<p>Alternance de Licence Pro, dans l'entreprise <a href="kercambre.com">Kercambre</a> spécialisée dans la création de sites d'e-commerce Shopify</p>
+	   				</div>
+				</div> <!-- end timeline-block -->
+
    				<div class="timeline-block animate-this">
 	   				<div class="timeline-ico">
 	   					<i class="fa fa-briefcase"></i>
@@ -238,7 +252,7 @@
 	   				<div class="timeline-content">	   					
 	   					<p>Un Stage de première année de BTS dans lequel j'ai crée une application php de gestion de matériel informatique</p>
 	   				</div>
-				   </div> <!-- end timeline-block -->
+				</div> <!-- end timeline-block -->
 				   
 				<div class="timeline-block animate-this">
 	   				<div class="timeline-ico">
@@ -410,7 +424,7 @@
 
    	<div class="row contact-info">
 
-   		<div class="col-four tab-full">
+   		<!-- <div class="col-four tab-full">
    			<h5 class="animate-this">Où me trouver</h5>
 
    			<p class="animate-this">
@@ -418,7 +432,7 @@
             28230<br>
             Epernon
             </p>
-   		</div> <!-- end col-four -->
+   		</div> end col-four -->
 
    		<div class="col-four tab-full collapse">
    			<h5 class="animate-this">Contactez-moi</h5>
@@ -428,13 +442,13 @@
 			   </p>
    		</div> <!-- end col-four -->
 
-   		<div class="col-four tab-full">
+   		<!-- <div class="col-four tab-full">
    			<h5 class="animate-this">Applez-moi</h5>
 
    			<p class="animate-this">
    				06 95 61 67 76
 			   </p>
-   		</div> <!-- end col-four -->
+   		</div> end col-four -->
    		
    	</div> <!-- end row contact-info -->
 		
