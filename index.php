@@ -433,7 +433,7 @@
             Epernon
             </p>
    		</div> end col-four -->
-
+		<div class="col-four tab-full collapse"> </div>
    		<div class="col-four tab-full collapse">
    			<h5 class="animate-this">Contactez-moi</h5>
 
