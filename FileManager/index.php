@@ -25,9 +25,9 @@ $use_auth = true;
 // Users: array('Username' => 'Password', 'Username2' => 'Password2', ...)
 // Generate secure password hash - https://tinyfilemanager.github.io/docs/pwd.html
 $auth_users = array(
-    'admin' => '$2y$10$/K.hjNr84lLNDt8fTXjoI.DBp6PpeyoJ.mGwrrLuCZfAwfSAGqhOW', //admin@123
+    'admin' => '$2y$10$/HHVe1EYbxX2OTveJOmEYOInYSLswGgO5w/4A95AJIG1TwEbqyR8O', //admin@rien
     'guest' => '',
-    'Clement' => '$2y$10$q0TrrFRIMFpnEuxybFTHdeSj6x1BxOaVczLt6y/6d5.4NEmTcSHXq'
+    'clement' => '$2y$10$TUNYOJAlhjVB5.L2lwLAHOcRnsAYuNYT8yxXQAcoVa9KrDBH8H6Eq'
 );
 
 //set application theme
@@ -67,7 +67,11 @@ $http_host = $_SERVER['HTTP_HOST'];
 
 // user specific directories
 // array('Username' => 'Directory path', 'Username2' => 'Directory path', ...)
-$directories_users = array();
+$directories_users = array(
+    'admin' => 'root',
+    'clement' => 'root/Clement',
+    'guest' => 'root/guest'
+);
 
 // input encoding for iconv
 $iconv_input_encoding = 'UTF-8';
