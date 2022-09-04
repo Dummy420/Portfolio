@@ -1,0 +1,71 @@
+footer,
+.footer,
+#footer {
+  position: relative;
+//   bottom: 0;
+//   left: 0;
+  width: 100%;
+  background: $background-color;
+  border-top: 2px outset $border-color;
+	display: flex;
+	z-index: 4;
+	
+	#nav-menu {
+		position: absolute;
+		bottom: calc(100% + 2px);
+		left: 0;
+		background-color: $background-color;
+		border: 2px outset $border-color;
+		
+		nav {
+			display: flex;
+			
+			.title {
+				padding: 0.5rem;
+				background-color: scale-color($background-color, $lightness: -15%);
+				mask: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
+				background-size: 4px 4px;
+				background-position: 0 0, 2px 2px;
+				writing-mode: vertical-rl;
+				text-orientation: mixed;
+				color: $taskbar-font;
+				transform: rotate(180deg);
+			}
+			
+			& button {
+				margin: 0;
+				border: none;
+				padding: 0.5em 1em;
+				text-align: left;
+				
+					&:hover {
+						color: $taskbar-font;
+						background: $taskbar-background;
+						& * {
+							color: inherit;
+						}
+				}
+			}
+		}
+
+
+	}
+	
+	button {
+		margin: 2px;
+	}
+	
+	.app-buttons {
+		margin-left: 2px;
+		
+		.app-button {
+			min-width: 10rem;
+			text-align: left;
+			margin: 2px 0;
+		}
+	}
+	
+	.clock-container {
+		border: 2px inset $border-color;
+	}
+}

@@ -1,0 +1,12 @@
+/* Font Awesome */
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+/* Levi Windows */
+@font-face {
+  font-family: 'Levi Windows';
+  // src: url('assets/fonts/Windows.ttf') format('truetype');
+  src: url('../../fonts/Windows.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

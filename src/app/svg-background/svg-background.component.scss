@@ -1,0 +1,34 @@
+.container {
+  position: relative;
+  height: 100%;
+  display: grid;
+  place-content: center;
+
+  &::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+
+  &.clouds::before { mask-image: url('/assets/images/svg_backgrounds/endless-clouds.svg'); }
+  &.wiggle::before { mask-image: url('/assets/images/svg_backgrounds/wiggle.svg'); }
+  &.diamonds::before { mask-image: url('/assets/images/svg_backgrounds/morphing-diamonds.svg'); }
+
+  .content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 6px 6px 13px 5px #000000b8;
+
+    h1 {
+      font-size: 2rem;
+      user-select: none;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+}

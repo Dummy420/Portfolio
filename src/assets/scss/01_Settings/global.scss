@@ -1,0 +1,17 @@
+// Color variables
+$font-color: #212529;
+$background-color: #c0c0c0;
+$taskbar-background: #08216b;
+$taskbar-font: #FFF;
+$desktop-background-color: #008080;
+$border-color: #dbdbdb;
+
+// Translating variables for Css
+body {
+	--font-color: #{$font-color};
+	--background-color: #{$background-color};
+	--taskbar-background: #{$taskbar-background};
+	--taskbar-font: #{$taskbar-font};
+	--desktop-background-color: #{$desktop-background-color};
+	--border-color: #{$border-color};
+}

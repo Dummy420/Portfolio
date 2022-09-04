@@ -1,0 +1,63 @@
+<div class="container">
+	<div id="icons">
+		
+	</div>
+
+	<ng-template #container></ng-template>
+	
+	<div class="window draggable resizable active" id="" draggable resizable style="left: 25%; top: 15%;">
+		<div class="window-title">
+			<h1>Test</h1>
+			<div class="buttons">
+				<button class="minimise"></button>
+				<button class="maximise"></button>
+				<button class="close"></button>
+			</div>
+		</div>
+		<div class="window-content">
+			<app-little-guy></app-little-guy>
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div id="nav-menu" *ngIf="menuOpen">
+		<nav>
+			<span class="title">
+				{{ title }}
+			</span>
+			<ul>
+			</ul>
+		</nav>
+	</div>
+	<button class="menu-button" (click)="toggleMenu()">Menu</button>
+	<div class="app-buttons">
+		<button class="app-button active" id="button-">
+			{{ title }}
+		</button>
+	</div>
+	<div class="spacer"></div>
+	<div class="clock-container">
+		<div class="icons">
+			
+		</div>
+		<span class="time">
+			22:16<br>
+			13/05/2022
+		</span>
+	</div>
+</footer>
+
+<div class="loader-overlay" *ngIf="loading">
+	<div id="cube-wrapper">
+		<div id="cube">
+			<div class="face one"><img src="assets/images/loader/face1.webp" alt="face1"/></div>
+			<div class="face two"><img src="assets/images/loader/face2.webp" alt="face2"/></div>
+			<div class="face three"><img src="assets/images/loader/face3.webp" alt="face3"/></div>
+			<div class="face four"><img src="assets/images/loader/face4.webp" alt="face4"/></div>
+			<div class="face five"><img src="assets/images/loader/face5.webp" alt="face5"/></div>
+			<div class="face six"><img src="assets/images/loader/face6.webp" alt="face6"/></div>
+			<div class="face shadow"></div>
+		</div>
+	</div>
+</div>

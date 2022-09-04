@@ -1,0 +1,31 @@
+html, body, app-root {
+  height: 100%;
+}
+
+html {
+  font-size: 18px;
+  font-family: 'Righteous', cursive;
+	color: $font-color;
+	background: $desktop-background-color;
+	overflow: hidden;
+	padding-bottom: 3rem;
+}
+
+app-root {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.hidden, [hidden] {
+	display: none;
+	visibility: hidden;
+}
+
+.spacer {
+	flex-grow: 1!important;
+}

@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "assets/scss/01_Settings/fonts.scss";
+@import "assets/scss/01_Settings/global.scss";
+
+@import "assets/scss/02_Tools/av-mq.scss";
+@import "assets/scss/02_Tools/mixins.scss";
+
+@import "assets/scss/03_General/base.scss";
+@import "assets/scss/03_General/reset.scss";
+@import "assets/scss/03_General/normalise.scss";
+@import "assets/scss/03_General/typographie.scss";
+
+@import "assets/scss/04_Elements/buttons.scss";
+@import "assets/scss/04_Elements/container.scss";
+@import "assets/scss/04_Elements/form.scss";
+@import "assets/scss/04_Elements/icons.scss";
+@import "assets/scss/04_Elements/preloader.scss";
+@import "assets/scss/04_Elements/window.scss";
+
+@import "assets/scss/05_Components/footer.scss";
+@import "assets/scss/05_Components/skillbars.scss";
+
+@import "assets/scss/06_Vendor/font-awesome-custom.scss";

@@ -1,0 +1,79 @@
+.loading-overlay {
+  height: fit-content;
+  width: fit-content;
+}
+
+.loader-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: scale-color($desktop-background-color, $lightness: -25%);
+  z-index: 3;
+  display: grid;
+  place-content: center;
+
+  #cube-wrapper {
+    perspective: 800;
+    perspective-origin: 50% 15%;
+    margin-top: 30px;
+    margin-bottom: 2.5rem;
+    #cube {
+      height: 5rem;
+      width: 5rem;
+      transform: rotateX(-10deg) rotateY(20deg);
+      animation: rotating 5s linear infinite;
+      position: relative;
+      margin: 0 auto;
+      transition: transform 1s ease;
+      transform-style: preserve-3d;
+
+      .face {
+        width: 5rem;
+        height: 5rem;
+        position: absolute;
+        background-color: #7c94a1;
+		
+		  img {
+			  height: 100%;
+			  width: 100%;
+		  }
+
+        &.one {
+          transform: rotateX(90deg) translateZ(2.5rem);
+        }
+        &.two {
+          transform: translateZ(2.5rem);
+        }
+        &.three {
+          transform: rotateY(90deg) translateZ(2.5rem);
+        }
+        &.four {
+          transform: rotateY(180deg) translateZ(2.5rem);
+        }
+        &.five {
+          transform: rotateY(-90deg) translateZ(2.5rem);
+        }
+        &.six {
+          transform: rotateX(-90deg) translateZ(2.5rem) rotate(180deg);
+        }
+		&.shadow {
+          transform: rotateX(90deg) translateZ(-5rem);
+		  		background-color: #000000b0;
+          box-shadow: 0px 0px 20px 7px #000000b0;
+		}
+      }
+    }
+  }
+}
+
+@keyframes rotating {
+  from {
+    -webkit-transform: rotateX(-10deg) rotateY(20deg);
+  }
+
+  to {
+    -webkit-transform: rotateX(-10deg) rotateY(380deg);
+  }
+}
