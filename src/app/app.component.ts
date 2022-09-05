@@ -1,16 +1,18 @@
-import { AfterViewInit, Component, ComponentFactoryResolver, OnInit, Type, ViewChild, ViewContainerRef } from '@angular/core';
-import { Router } from '@angular/router';
+import { AfterViewInit, Component, ComponentFactoryResolver, ComponentRef, OnInit, Type, ViewChild, ViewContainerRef } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import interact from 'interactjs';
+import { filter } from 'rxjs';
 import { LittleGuyComponent } from './little-guy/little-guy.component';
 import { ProgramDirective } from './program.directive';
+import { ProgramsDirective } from './programs.directive';
+import { WindowComponent } from './window/window.component';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements AfterViewInit, OnInit {
-  title: string = '';
+  title: string = 'Fun stuff';
   loading: boolean = true;
 
   menuOpen: boolean = false;
@@ -18,7 +20,11 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   programs: any[] = [];
 
-  constructor() {
+  currentUrl: string = '';
+
+  @ViewChild(ProgramsDirective, {static: true}) programsHost!: ProgramDirective;
+
+  constructor(private router: Router, private route: ActivatedRoute) {
     interact('.resizable').resizable({
       edges: {
         left: true,
@@ -91,12 +97,27 @@ export class AppComponent implements AfterViewInit, OnInit {
     });
   }
 
-  addComponent(componentClass: Type<any>) {
+  createComponent(prog: string): void {
+    if(!document.querySelector(`#${prog}`)) {
+      const viewContainerRef = this.programsHost.viewContainerRef;
+
+      const component: ComponentRef<WindowComponent> = viewContainerRef.createComponent<WindowComponent>(WindowComponent);
+  
+      component.instance.component = prog;
+    }
   }
 
   ngOnInit(): void {
-    this.title = document.title;
-    this.loading = false;
+    this.router.events
+      .pipe(
+        filter(event => event instanceof NavigationEnd)
+      )
+      .subscribe(url => {
+        console.log(this.route.toString());
+        this.loading = false;
+        this.currentUrl = this.router.url;
+        console.log(this.router.config);
+      })
   }
 
   ngAfterViewInit(): void {

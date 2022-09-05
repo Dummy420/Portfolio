@@ -1,11 +1,7 @@
-<style>
-  .container::before {
-    background-color: {{styleColor}};
-  }
-</style>
-
-<div [class]="'container ' + currentClass" [style.filter]="'hue-rotate(' + styleColor + 'deg)'">
+<div [class]="'container ' + currentClass" [style]="'--background-color: ' + currentColor + ';'">
   <section class="content">
-    <h1 (click)="getRandomColor()">SVG Background</h1>
+    <button (click)="getRandom()">
+      <h1>SVG Background</h1>
+    </button>
   </section>
 </div>

@@ -1,13 +1,20 @@
 <div class="container">
 	<div id="icons">
-		
+		<div class="icon" (click)="createComponent('little-guy')">
+			<img src="assets/images/face1.webp" alt="Guy">
+			<span>little-guy</span>
+		</div>
+		<div class="icon" (click)="createComponent('svg-background')">
+			<img src="assets/images/face3.webp" alt="SVG">
+			<span>Svg</span>
+		</div>
 	</div>
 
 	<ng-template #container></ng-template>
 	
-	<div class="window draggable resizable active" id="" draggable resizable style="left: 25%; top: 15%;">
+	<div class="window draggable resizable active" id="" draggable resizable style="left: 25%; top: 15%;" *ngIf="currentUrl !== '/'">
 		<div class="window-title">
-			<h1>Test</h1>
+			<h1>{{ title }}</h1>
 			<div class="buttons">
 				<button class="minimise"></button>
 				<button class="maximise"></button>
@@ -15,9 +22,11 @@
 			</div>
 		</div>
 		<div class="window-content">
-			<app-little-guy></app-little-guy>
+			<router-outlet></router-outlet>
 		</div>
 	</div>
+
+	<ng-template programsHost></ng-template>
 </div>
 
 <footer>
