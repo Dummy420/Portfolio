@@ -57,6 +57,7 @@ footer,
 	
 	.app-buttons {
 		margin-left: 2px;
+		display: flex;
 		
 		.app-button {
 			min-width: 10rem;
@@ -67,5 +68,6 @@ footer,
 	
 	.clock-container {
 		border: 2px inset $border-color;
+		text-align: center;
 	}
 }

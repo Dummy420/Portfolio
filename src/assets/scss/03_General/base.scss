@@ -1,5 +1,18 @@
-html, body, app-root {
+html, body, app-root, app-window {
   height: 100%;
+}
+
+// * Rendre l'element app-window compatible avec interact.js, et empeche les pointer events de faire chier
+app-window {
+	width: 100%;
+	height: 100%;
+	display: block;
+	pointer-events: none;
+	position: absolute;
+
+	&>* {
+		pointer-events: all;
+	}
 }
 
 html {

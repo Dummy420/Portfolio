@@ -1,0 +1,71 @@
+.wrapper {
+  display: grid;
+  place-content: center;
+  height: 100%;
+  background: radial-gradient(circle, #b0c4df 15%, #638cca 77%);
+
+  #container {
+    $height: 10rem;
+    perspective: 800;
+    perspective-origin: 50% (-$height);
+    pointer-events: none;
+
+    #little-guy {
+      height: $height;
+      width: $height;
+      transition: 0.1s all ease-out;
+      // animation: rotating 5s linear infinite;
+      position: relative;
+      margin: 0 auto;
+      transform-style: preserve-3d;
+
+      .face {
+        width: $height;
+        height: $height;
+        position: absolute;
+        opacity: 1;
+        background-color: #814dbc;
+        border: 1px solid #926ebb;
+
+        & img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .one {
+        transform: rotateX(90deg) translateZ(calc($height / 2));
+      }
+
+      .two {
+        transform: translateZ(calc($height / 2));
+      }
+
+      .three {
+        transform: rotateY(90deg) translateZ(calc($height / 2));
+      }
+
+      .four {
+        transform: rotateY(180deg) translateZ(calc($height / 2));
+      }
+
+      .five {
+        transform: rotateY(-90deg) translateZ(calc($height / 2));
+      }
+
+      .six {
+        transform: rotateX(-90deg) translateZ(calc($height / 2)) rotate(180deg);
+      }
+    }
+
+    @keyframes rotating {
+      from {
+        -webkit-transform: rotateX(-10deg) rotateY(20deg);
+      }
+
+      to {
+        -webkit-transform: rotateX(-10deg) rotateY(380deg);
+      }
+    }
+  }
+}
