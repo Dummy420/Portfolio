@@ -15,6 +15,7 @@ export class SvgBackgroundComponent implements OnInit {
     'death-star',
     'bamboo',
     'church-on-sunday',
+    'bathroom-floor',
   ]
   currentClass: string = 'clouds';
   currentColor: string = 'red';
