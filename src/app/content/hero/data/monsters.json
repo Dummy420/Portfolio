@@ -1,0 +1,9 @@
+{
+  "monsters": [
+    {
+      "name": "test",
+      "health": 10,
+      "description": "Un monstre test"
+    }
+  ]
+}

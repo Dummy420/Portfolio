@@ -33,6 +33,8 @@ export class WindowComponent implements OnInit {
         break;
     }
 
+    // document.querySelector('.app-buttons')?.appendChild();
+
     this.window.cpl_openWindow = this.component;
   }
 

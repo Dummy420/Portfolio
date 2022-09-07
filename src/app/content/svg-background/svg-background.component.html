@@ -1,11 +1,12 @@
-<div [class]="'container ' + currentClass" [style]="'--background-color: ' + currentColor + ';'">
+<div [class]="'container ' + currentClass" [style]="'--background-color: ' + currentColor + '; background-color: ' + backgroundColor + ';'">
   <section class="content">
     <button (click)="getRandom()">
       <h1>SVG Background</h1>
     </button>
   </section>
   <div class="controls">
-    <label>Color: <input type="color" name="bg-color" id="bg-color" [(ngModel)]="currentColor"></label>
+    <label>Color: <input type="color" [(ngModel)]="currentColor"></label>
+    <label>Background: <input type="color" [(ngModel)]="backgroundColor"></label>
     <label>
       Class: 
       <select name="bg-class" id="bg-class" [(ngModel)]="currentClass">

@@ -19,6 +19,7 @@ export class SvgBackgroundComponent implements OnInit {
   ]
   currentClass: string = 'clouds';
   currentColor: string = 'red';
+  backgroundColor: string = 'white';
 
   constructor() { }
 
@@ -27,13 +28,14 @@ export class SvgBackgroundComponent implements OnInit {
   }
 
   getRandom() : void {
-    this.getRandomColor();
+    this.currentColor = this.getRandomColor();
+    this.backgroundColor = this.getRandomColor();
     this.getRandomClass();
   }
 
-  getRandomColor(): void {
+  getRandomColor(): string {
     var color = Math.floor(0x1000000 * Math.random()).toString(16);
-    this.currentColor = `#${('000000' + color).slice(-6)}`;
+    return `#${('000000' + color).slice(-6)}`;
   }
   getRandomClass(): void {
     this.currentClass = this.classes[Math.floor(Math.random() * this.classes.length)];
