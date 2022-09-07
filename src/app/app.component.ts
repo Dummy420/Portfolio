@@ -1,8 +1,7 @@
 import { AfterViewInit, Component, ComponentFactoryResolver, ComponentRef, OnInit, Type, ViewChild, ViewContainerRef } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, NavigationStart, Resolve, ResolveFn, Router } from '@angular/router';
 import interact from 'interactjs';
 import { filter } from 'rxjs';
-import { LittleGuyComponent } from './little-guy/little-guy.component';
 import { ProgramDirective } from './program.directive';
 import { ProgramsDirective } from './programs.directive';
 import { WindowComponent } from './window/window.component';
@@ -51,6 +50,8 @@ export class AppComponent implements AfterViewInit, OnInit {
     
           target.setAttribute('data-x', x)
           target.setAttribute('data-y', y)
+
+          window.cpl_openWindow = target.id;
         }
       },
       modifiers: [
@@ -85,6 +86,8 @@ export class AppComponent implements AfterViewInit, OnInit {
           // update the posiion attributes
           target.setAttribute('data-x', x)
           target.setAttribute('data-y', y)
+
+          window.cpl_openWindow = target.id;
         }
       },
       inertia: false,
@@ -97,13 +100,14 @@ export class AppComponent implements AfterViewInit, OnInit {
     });
   }
 
-  createComponent(prog: string): void {
+  createComponent(prog: string, maximised: boolean = false): void {
     if(!document.querySelector(`#${prog}`)) {
       const viewContainerRef = this.programsHost.viewContainerRef;
 
       const component: ComponentRef<WindowComponent> = viewContainerRef.createComponent<WindowComponent>(WindowComponent);
   
       component.instance.component = prog;
+      component.instance.maximised = maximised;
     }
   }
 
@@ -112,11 +116,28 @@ export class AppComponent implements AfterViewInit, OnInit {
       .pipe(
         filter(event => event instanceof NavigationEnd)
       )
-      .subscribe(url => {
-        console.log(this.route.toString());
+      .subscribe(val => {
+        let url = val as NavigationEnd;
+        let currentRoute = this.router.config.find(el => {
+            return el.path ? url.url.includes(el.path) : false;
+          });
+
+        this.currentUrl = currentRoute?.path ? currentRoute.path : this.currentUrl;
+        this.title = currentRoute?.title ? currentRoute.title as string : this.title;
+
+        // Si il faut afficher une fenetre
+        if (currentRoute) {
+          let max = false;
+          
+          this.route.queryParams.subscribe(params => {
+            if(params.hasOwnProperty('maximised')) {
+              max = true;
+            }
+          });
+          this.createComponent(this.currentUrl, max);
+        }
+
         this.loading = false;
-        this.currentUrl = this.router.url;
-        console.log(this.router.config);
       })
   }
 

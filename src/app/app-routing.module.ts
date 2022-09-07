@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LittleGuyComponent } from './little-guy/little-guy.component';
-import { SvgBackgroundComponent } from './svg-background/svg-background.component';
+import { LittleGuyComponent } from './content/little-guy/little-guy.component';
+import { SvgBackgroundComponent } from './content/svg-background/svg-background.component';
 
 const routes: Routes = [
   {path: 'svg-background', component: SvgBackgroundComponent, title: "Svg Backgrounds"},

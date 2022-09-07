@@ -1,14 +1,20 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { LittleGuyComponent } from '../little-guy/little-guy.component';
+import { Component, Input, OnInit, HostListener, ViewChild } from '@angular/core';
+import { LittleGuyComponent } from '../content/little-guy/little-guy.component';
 import { ProgramsDirective } from '../programs.directive';
-import { SvgBackgroundComponent } from '../svg-background/svg-background.component';
+import { SvgBackgroundComponent } from '../content/svg-background/svg-background.component';
 
 @Component({
   selector: 'app-window',
   templateUrl: './window.component.html'
 })
 export class WindowComponent implements OnInit {
+  @HostListener('click', ['$event'])
+  onClick(e: any) {
+    this.window.cpl_openWindow = this.component;
+  }
+
   @Input() component: string = '';
+  @Input() maximised: boolean = false;
 
   @ViewChild(ProgramsDirective, {static: true}) programsHost!: ProgramsDirective;
 
@@ -22,10 +28,11 @@ export class WindowComponent implements OnInit {
         viewContainerRef.createComponent<LittleGuyComponent>(LittleGuyComponent);
         break;
     }
+
+    this.window.cpl_openWindow = this.component;
   }
 
   public get window() : any {
     return window;
   }
-
 }

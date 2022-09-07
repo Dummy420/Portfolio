@@ -1,0 +1,53 @@
+.container {
+  position: relative;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  background-color: white;
+
+  &::before {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--background-color);
+  }
+
+  &.clouds::before { mask-image: url('/assets/images/svg_backgrounds/endless-clouds.svg'); }
+  &.wiggle::before { mask-image: url('/assets/images/svg_backgrounds/wiggle.svg'); }
+  &.diamonds::before { mask-image: url('/assets/images/svg_backgrounds/morphing-diamonds.svg'); }
+  &.topography::before { mask-image: url('/assets/images/svg_backgrounds/topography.svg'); }
+  &.charlie-brown::before { mask-image: url('/assets/images/svg_backgrounds/charlie-brown.svg'); }
+  &.death-star::before { mask-image: url('/assets/images/svg_backgrounds/death-star.svg'); mask-size: 30px; }
+  &.bamboo::before { mask-image: url('/assets/images/svg_backgrounds/bamboo.svg'); mask-size: 20px; }
+  &.church-on-sunday::before { mask-image: url('/assets/images/svg_backgrounds/church-on-sunday.svg'); }
+
+  .content {
+    z-index: 1;
+
+    button {
+      font-size: 2rem;
+      background: white;
+      border: none;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 6px 6px 0px 5px #000000b8;
+
+      // transition: all 0.1s linear;
+
+      &:active {
+        box-shadow: 5px 5px 0px 4px #000000b8;
+      }
+    }
+  }
+
+  .disclamer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #adadad;
+    padding-left: 0.1rem;
+    padding-top: 0.1rem;
+  }
+}
