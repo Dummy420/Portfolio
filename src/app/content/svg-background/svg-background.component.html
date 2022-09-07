@@ -4,6 +4,23 @@
       <h1>SVG Background</h1>
     </button>
   </section>
+  <div class="controls">
+    <label>Color: <input type="color" name="bg-color" id="bg-color" [(ngModel)]="currentColor"></label>
+    <label>
+      Class: 
+      <select name="bg-class" id="bg-class" [(ngModel)]="currentClass">
+        <option id="clouds">clouds</option>
+        <option id="wiggle">wiggle</option>
+        <option id="diamonds">diamonds</option>
+        <option id="topography">topography</option>
+        <option id="charlie-brown">charlie-brown</option>
+        <option id="death-star">death-star</option>
+        <option id="bamboo">bamboo</option>
+        <option id="church-on-sunday">church-on-sunday</option>
+        <option id="bathroom-floor">bathroom-floor</option>
+      </select>
+    </label>
+  </div>
   <div class="disclamer">
     All backgrounds come from <a href="https://heropatterns.com/">heropatterns.com</a>
   </div>

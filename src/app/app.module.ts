@@ -8,6 +8,8 @@ import { LittleGuyComponent } from './content/little-guy/little-guy.component';
 import { ProgramDirective } from './program.directive';
 import { ProgramsDirective } from './programs.directive';
 import { WindowComponent } from './window/window.component';
+import { FormsModule } from '@angular/forms';
+import { HeroComponent } from './content/hero/hero.component';
 
 declare global {
   interface Window { 
@@ -22,11 +24,13 @@ declare global {
     LittleGuyComponent,
     ProgramDirective,
     ProgramsDirective,
-    WindowComponent
+    WindowComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

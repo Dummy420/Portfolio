@@ -1,7 +1,6 @@
 .window {
   border: 2px outset $border-color;
-  touch-action: none;
-  user-select: none;
+  
   overflow: hidden;
   width: 65%;
   height: 65%;
@@ -83,7 +82,7 @@
     background-color: $background-color;
     flex-grow: 1;
 	  overflow: auto;
-	padding: 0.1em;
+	  padding: 0.1em;
 	  &.centered {
 		  display: grid;
 		  place-content: center;

@@ -1,0 +1,25 @@
+<div class="container">
+  <section class="content">
+    <img src="https://i.pinimg.com/originals/c9/9a/bc/c99abc03b0849376b5b110718d543d9e.jpg">
+    <span>You may find that having is not so pleasing a thing as wanting. This is not logical, but it is often true. With the first link, the chain is forged. The first speech censored, the first thought forbidden, the first freedom denied, chains us all irrevocably. What makes one man an exceptional leader? We see indications that it's his negative side which makes him strong, that his evil side, controlled and disciplined, is vital to his strength. Your negative side removed from you, the power of command begins to elude you. Perhaps man wasn't meant for paradise. Maybe he was meant to claw, to scratch all the way. I speak of rights! A machine has none; a man must. If you do not grant him that right, you have brought us down to the level of the machine; indeed, you have elevated that machine above us!  To all mankind -- may we never find space so vast, planets so cold, heart and mind so empty that we cannot fill them with love and warmth. A species that enslaves other beings is hardly superior -- mentally or otherwise.</span>
+  </section>
+  <div class="controls">
+    <div class="status">
+      <ul>
+        <li><b>HP:</b> {{ HP }}/{{ maxHP }}</li>
+        <li><b>Gold:</b> {{ gold }}</li>
+        <li class="items"><b>Items:</b>
+          <ul>
+            <li class="item" *ngFor="let item of items">{{ item.name }}</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="buttons">
+      <button>Go Left</button>
+      <button>Go Right</button>
+    </div>
+    <div class="dice">
+    </div>
+  </div>
+</div>

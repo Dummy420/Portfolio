@@ -2,6 +2,7 @@ import { Component, Input, OnInit, HostListener, ViewChild } from '@angular/core
 import { LittleGuyComponent } from '../content/little-guy/little-guy.component';
 import { ProgramsDirective } from '../programs.directive';
 import { SvgBackgroundComponent } from '../content/svg-background/svg-background.component';
+import { HeroComponent } from '../content/hero/hero.component';
 
 @Component({
   selector: 'app-window',
@@ -26,6 +27,9 @@ export class WindowComponent implements OnInit {
         break;
       case "little-guy":
         viewContainerRef.createComponent<LittleGuyComponent>(LittleGuyComponent);
+        break;
+      case "hero":
+        viewContainerRef.createComponent<HeroComponent>(HeroComponent);
         break;
     }
 
