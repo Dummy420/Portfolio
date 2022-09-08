@@ -21,12 +21,17 @@
     padding: 0.75rem;
 
     img {
-      width: 50%;
-      margin: auto;
+      height: 50%;
+      margin: 0 auto;
     }
 
-    span {
+    .text-content {
       padding-top: 0.75rem;
+      display: grid;
+      place-content: center;
+
+      height: 100%;
+      text-align: center;
     }
   }
 

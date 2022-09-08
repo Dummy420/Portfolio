@@ -1,9 +1,11 @@
-import { AfterViewInit, Component, ComponentFactoryResolver, ComponentRef, OnInit, Type, ViewChild, ViewContainerRef } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, NavigationStart, Resolve, ResolveFn, Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
+import { AfterViewInit, Component, ComponentRef, ElementRef, NgZone, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import interact from 'interactjs';
 import { filter } from 'rxjs';
-import { ProgramDirective } from './program.directive';
+import { ProgramsButtonsDirective } from './programs-buttons.directive';
 import { ProgramsDirective } from './programs.directive';
+import { AppButtonComponent } from './window/app-button/app-button.component';
 import { WindowComponent } from './window/window.component';
 
 @Component({
@@ -21,9 +23,11 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   currentUrl: string = '';
 
-  @ViewChild(ProgramsDirective, {static: true}) programsHost!: ProgramDirective;
+  @ViewChild(ProgramsDirective, {static: true}) programsHost!: ProgramsDirective;
+  @ViewChild(ProgramsButtonsDirective, {static: true}) programsHostButton!: ProgramsButtonsDirective;
+  @ViewChild('time_clock') public clockElement!: ElementRef;
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute, public datepipe: DatePipe, private renderer: Renderer2, private zone: NgZone) {
     interact('.resizable').resizable({
       edges: {
         left: true,
@@ -98,16 +102,24 @@ export class AppComponent implements AfterViewInit, OnInit {
         })
       ]
     });
+
+    this.zone.runOutsideAngular(() => {
+      setInterval(() => {
+        this.renderer.setProperty(this.clockElement.nativeElement, 'innerHTML', `${this.datepipe.transform((new Date), 'HH:mm')} <br> ${this.datepipe.transform((new Date), 'dd/MM/yyyy')}`)
+      }, 2000);
+    })
   }
 
   createComponent(prog: string, maximised: boolean = false): void {
     if(!document.querySelector(`#${prog}`)) {
       const viewContainerRef = this.programsHost.viewContainerRef;
-
       const component: ComponentRef<WindowComponent> = viewContainerRef.createComponent<WindowComponent>(WindowComponent);
-  
       component.instance.component = prog;
       component.instance.maximised = maximised;
+
+      const buttonContainer = this.programsHostButton.viewContainerRef;
+      const buttonComponent: ComponentRef<AppButtonComponent> = buttonContainer.createComponent<AppButtonComponent>(AppButtonComponent);
+      buttonComponent.instance.component = prog;
     }
   }
 
@@ -143,11 +155,5 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   ngAfterViewInit(): void {
     // this.loading = false;
-  }
-
-  toggleMenu(): void {
-    console.log("test");
-    this.menuOpen = !this.menuOpen;
-    console.log(this.menuOpen);
   }
 }

@@ -12,10 +12,7 @@
 			<img src="assets/images/face3.webp" alt="SVG">
 			<span>Hero</span>
 		</div>
-	</div>
-
-	<ng-template #container></ng-template>
-	
+	</div>	
 	<!-- <div class="window routerWindow draggable resizable active" id="{{ title }}" draggable resizable style="left: 25%; top: 15%;" *ngIf="currentUrl !== '/'">
 		<div class="window-title">
 			<h1>{{ title }}</h1>
@@ -43,18 +40,16 @@
 			</ul>
 		</nav>
 	</div>
-	<button class="menu-button" (click)="toggleMenu()">Menu</button>
-	<div class="app-buttons">
-		<button class="app-button active" id="button-">
-			{{ title }}
-		</button>
+	<button class="menu-button" (click)="menuOpen = !menuOpen">Menu</button>
+	<div class="app-buttons" #app_buttons>
+		<ng-template programsButtonsHost></ng-template>
 	</div>
 	<div class="spacer"></div>
 	<div class="clock-container">
 		<div class="icons">
 			
 		</div>
-		<span class="time">
+		<span class="time" #time_clock>
 			22:16<br>
 			13/05/2022
 		</span>
