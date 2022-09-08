@@ -27,7 +27,13 @@ export class AppComponent implements AfterViewInit, OnInit {
   @ViewChild(ProgramsButtonsDirective, {static: true}) programsHostButton!: ProgramsButtonsDirective;
   @ViewChild('time_clock') public clockElement!: ElementRef;
 
-  constructor(private router: Router, private route: ActivatedRoute, public datepipe: DatePipe, private renderer: Renderer2, private zone: NgZone) {
+  constructor(
+    private router: Router, 
+    private route: ActivatedRoute, 
+    public datepipe: DatePipe, 
+    private renderer: Renderer2, 
+    private zone: NgZone
+  ) {
     interact('.resizable').resizable({
       edges: {
         left: true,
