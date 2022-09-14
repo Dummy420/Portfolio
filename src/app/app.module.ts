@@ -12,6 +12,8 @@ import { WindowComponent } from './window/window.component';
 import { HeroComponent } from './content/hero/hero.component';
 import { AppButtonComponent } from './window/app-button/app-button.component';
 import { ProgramsButtonsDirective } from './programs-buttons.directive';
+import { AboutMeComponent } from './content/portfolio/about-me/about-me.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 declare global {
   interface Window { 
@@ -28,7 +30,9 @@ declare global {
     WindowComponent,
     HeroComponent,
     AppButtonComponent,
-    ProgramsButtonsDirective
+    ProgramsButtonsDirective,
+    AboutMeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -135,24 +135,30 @@ export class AppComponent implements AfterViewInit, OnInit {
         filter(event => event instanceof NavigationEnd)
       )
       .subscribe(val => {
-        let url = val as NavigationEnd;
-        let currentRoute = this.router.config.find(el => {
+        let url = val as NavigationEnd,
+          currentRoute = this.router.config.find(el => {
             return el.path ? url.url.includes(el.path) : false;
-          });
+          }),
+          max: boolean = false;
 
         this.currentUrl = currentRoute?.path ? currentRoute.path : this.currentUrl;
         this.title = currentRoute?.title ? currentRoute.title as string : this.title;
 
+        console.log(url);
+
+        
+
         // Si il faut afficher une fenetre
         if (currentRoute) {
-          let max = false;
-          
           this.route.queryParams.subscribe(params => {
             if(params.hasOwnProperty('maximised')) {
               max = true;
             }
           });
+          
           this.createComponent(this.currentUrl, max);
+        } else if(url.url != '/') {
+          this.createComponent("not-found", true)
         }
 
         this.loading = false;

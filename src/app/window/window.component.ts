@@ -3,6 +3,7 @@ import { LittleGuyComponent } from '../content/little-guy/little-guy.component';
 import { ProgramsDirective } from '../programs.directive';
 import { SvgBackgroundComponent } from '../content/svg-background/svg-background.component';
 import { HeroComponent } from '../content/hero/hero.component';
+import { NotFoundComponent } from '../not-found/not-found.component';
 
 @Component({
   selector: 'app-window',
@@ -30,6 +31,12 @@ export class WindowComponent implements OnInit {
         break;
       case "hero":
         viewContainerRef.createComponent<HeroComponent>(HeroComponent);
+        break;
+      case "portfolio":
+        // viewContainerRef.createComponent<PortfolioComponent>(PortfolioComponent);
+        break;
+      default:
+        viewContainerRef.createComponent<NotFoundComponent>(NotFoundComponent);
         break;
     }
 
