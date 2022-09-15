@@ -6,6 +6,7 @@ import { SvgBackgroundComponent } from './content/svg-background/svg-background.
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
+  {path: '', component: SvgBackgroundComponent, title: "Index"},
   {path: 'svg-background', component: SvgBackgroundComponent, title: "Svg Backgrounds"},
   {path: 'little-guy', component: LittleGuyComponent, title: "Little Guy"},
   {path: 'hero', component: HeroComponent, title: "Hero"},

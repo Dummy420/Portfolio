@@ -158,7 +158,7 @@ export class AppComponent implements AfterViewInit, OnInit {
           
           this.createComponent(this.currentUrl, max);
         } else if(url.url != '/') {
-          this.createComponent("not-found", true)
+          this.createComponent("not-found", true);
         }
 
         this.loading = false;
